@@ -9,9 +9,9 @@
 
 import argparse
 
-from iou_tracker import track_iou
-from viou_tracker import track_viou
-from util import load_mot, save_to_csv
+from iou_tracker.iou_tracker import track_iou
+from iou_tracker.viou_tracker import track_viou
+from iou_tracker.util import load_mot, save_to_csv
 
 
 def main(args):

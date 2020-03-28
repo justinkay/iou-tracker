@@ -194,7 +194,7 @@ def save_to_csv(out_path, tracks, fmt='motchallenge'):
                        'y': bbox[1]+1,
                        'w': bbox[2] - bbox[0],
                        'h': bbox[3] - bbox[1],
-                       'score': track['max_score']}
+                       'score': track['max_score'].item()}
                 if fmt == 'motchallenge':
                     row['wx'] = -1
                     row['wy'] = -1
