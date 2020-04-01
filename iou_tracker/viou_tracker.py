@@ -11,8 +11,8 @@ from lapsolver import solve_dense
 from tqdm import tqdm
 from time import time
 
-from util import iou, load_mot
-from vis_tracker import VisTracker
+from .util import iou, load_mot
+from .vis_tracker import VisTracker
 
 
 def track_viou(frames_path, detections, sigma_l, sigma_h, sigma_iou, t_min, ttl, tracker_type, keep_upper_height_ratio):
@@ -45,7 +45,7 @@ def track_viou(frames_path, detections, sigma_l, sigma_h, sigma_iou, t_min, ttl,
     tracks_finished = []
     frame_buffer = []
 
-    for frame_num, detections_frame in enumerate(tqdm(detections), start=1):
+    for frame_num, detections_frame in enumerate(tqdm(detections), start=0):
         # load frame and put into buffer
         frame_path = frames_path.format(frame_num)
         frame = cv2.imread(frame_path)
