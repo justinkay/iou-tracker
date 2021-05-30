@@ -7,7 +7,7 @@
 
 from time import time
 
-from util import load_mot, iou
+from .util import load_mot, iou
 
 
 def track_iou(detections, sigma_l, sigma_h, sigma_iou, t_min):
@@ -30,7 +30,7 @@ def track_iou(detections, sigma_l, sigma_h, sigma_iou, t_min):
     tracks_active = []
     tracks_finished = []
 
-    for frame_num, detections_frame in enumerate(detections, start=1):
+    for frame_num, detections_frame in enumerate(detections, start=0):
         # apply low threshold to detections
         dets = [det for det in detections_frame if det['score'] >= sigma_l]
 
